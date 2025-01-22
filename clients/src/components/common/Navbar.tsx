@@ -77,6 +77,12 @@ export default function Navbar() {
                 >
                   Offspring techniques
                 </Link>
+                <Link
+                  to="/transportation"
+                  className="text-lg font-semibold hover:text-green-600"
+                >
+                  Location
+                </Link>
               </div>
             )}
           </div>

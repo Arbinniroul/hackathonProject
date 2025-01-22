@@ -15,6 +15,8 @@ const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const Prediction = lazy(() => import("@/pages/Prediction"));
+const Location = lazy(() => import("@/pages/Location"));
+
 const SeasonalVegetable = lazy(() => import("@/pages/SesonalVegetable"));
 const Contact = lazy(() => import("@/pages/Contact"));
 
@@ -107,6 +109,14 @@ export default function MainLayout() {
               element={
                 <AuthGuard>
                   <Contact />
+                </AuthGuard>
+              }
+            />
+            <Route
+              path="/transportation"
+              element={
+                <AuthGuard>
+                  <Location/>
                 </AuthGuard>
               }
             />
