@@ -19,3 +19,38 @@ export interface MonthData {
     marketDemand: 'high' | 'medium' | 'low';
   };
 }
+export interface Crop2 {
+  id: string;
+  name: string;
+  image: string;
+  regions: Region[];
+  phRange: string;
+  temperature: string;
+  wateringNeeds: string;
+  sunlight: string;
+  fertilizer: string;
+  plantingMonths: string[];
+  harvestingMonths: string[];
+  growingTechniques: string[];
+  nutrientRequirements: string;
+  additionalTips: string[];
+  marketData: MarketData;
+}
+
+export type Region = 'terai' | 'hilly' | 'himalayan';
+
+export interface RegionInfo {
+  name: string;
+  description: string;
+  altitude: string;
+  climate: string;
+  image: string;
+}
+
+export interface MarketData {
+  seedCost: number;
+  fertilizerCost: number;
+  laborCost: number;
+  estimatedYield: number;
+  marketPrices: Record<Region, number>;
+}

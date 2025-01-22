@@ -71,6 +71,12 @@ export default function Navbar() {
                 >
                   Recommendation
                 </Link>
+                <Link
+                  to="/offspring"
+                  className="text-lg font-semibold hover:text-green-600"
+                >
+                  Offspring techniques
+                </Link>
               </div>
             )}
           </div>

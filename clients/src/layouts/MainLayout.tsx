@@ -5,6 +5,7 @@ import { lazy, Suspense, useEffect } from "react";
 import AuthLayout from "@/components/common/Layout";
 import NotFound from "@/components/auth/not-found";
 import AuthGuard from "@/components/auth/check-auth";
+import Offspring from "@/pages/Offspring";
 
 
 const LandingPage = lazy(() => import("@/pages/Landing"));
@@ -90,6 +91,14 @@ export default function MainLayout() {
               element={
                 <AuthGuard>
                   <SeasonalVegetable />
+                </AuthGuard>
+              }
+            />
+             <Route
+              path="/offspring"
+              element={
+                <AuthGuard>
+                  <Offspring/>
                 </AuthGuard>
               }
             />
