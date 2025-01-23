@@ -55,8 +55,7 @@ export default function Home() {
           <div className="lg:col-span-2 bg-white shadow-lg rounded-lg p-6 space-y-8">
             <LocationSelector
               onSourceSelect={handleSourceSelect}
-              onDestinationSelect={handleDestinationSelect}
-              onChitwanToKathmanduSelect={handleChitwanToKathmanduSelect}
+            
               onShowRoute={handleShowRoute}
               sourceLocation={sourceLocation}
               destinationLocation={destinationLocation}

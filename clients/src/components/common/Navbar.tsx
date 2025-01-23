@@ -60,22 +60,10 @@ export default function Navbar() {
                   Dashboard
                 </Link>
                 <Link
-                  to="/prediction"
+                  to="/solutions"
                   className="text-lg font-semibold hover:text-green-600"
                 >
-                  Prediction
-                </Link>
-                <Link
-                  to="/recommendation"
-                  className="text-lg font-semibold hover:text-green-600"
-                >
-                  Recommendation
-                </Link>
-                <Link
-                  to="/offspring"
-                  className="text-lg font-semibold hover:text-green-600"
-                >
-                  Offspring techniques
+                  Solutions
                 </Link>
                 <Link
                   to="/transportation"

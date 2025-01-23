@@ -5,8 +5,8 @@ import { lazy, Suspense, useEffect } from "react";
 import AuthLayout from "@/components/common/Layout";
 import NotFound from "@/components/auth/not-found";
 import AuthGuard from "@/components/auth/check-auth";
-import Offspring from "@/pages/Offspring";
-
+import HealthProblems from "@/pages/HealthSolutions";
+import Solutions from "@/pages/Solutions";
 
 const LandingPage = lazy(() => import("@/pages/Landing"));
 const Login = lazy(() => import("@/components/auth/Login"));
@@ -16,12 +16,11 @@ const About = lazy(() => import("@/pages/About"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const Prediction = lazy(() => import("@/pages/Prediction"));
 const Location = lazy(() => import("@/pages/Location"));
-
 const SeasonalVegetable = lazy(() => import("@/pages/SesonalVegetable"));
 const Contact = lazy(() => import("@/pages/Contact"));
+const Offspring = lazy(() => import("@/pages/Offspring"));
 
 export default function MainLayout() {
-  
   // Check authentication state from sessionStorage or Redux store
   const { isAuthenticated } = useSelector((state) => state.auth);
   const user1 = sessionStorage.getItem("isAuthenticated");
@@ -72,35 +71,10 @@ export default function MainLayout() {
               }
             />
             <Route
-  path="/dashboard"
-  element={
-    <AuthGuard >
-      <Dashboard />
-    </AuthGuard>
-  }
-/>
-
-            <Route
-              path="/prediction"
+              path="/dashboard"
               element={
                 <AuthGuard>
-                  <Prediction />
-                </AuthGuard>
-              }
-            />
-            <Route
-              path="/recommendation"
-              element={
-                <AuthGuard>
-                  <SeasonalVegetable />
-                </AuthGuard>
-              }
-            />
-             <Route
-              path="/offspring"
-              element={
-                <AuthGuard>
-                  <Offspring/>
+                  <Dashboard />
                 </AuthGuard>
               }
             />
@@ -116,10 +90,57 @@ export default function MainLayout() {
               path="/transportation"
               element={
                 <AuthGuard>
-                  <Location/>
+                  <Location />
                 </AuthGuard>
               }
             />
+             <Route
+              path="/recommendation"
+              element={
+                <AuthGuard>
+                 <SeasonalVegetable />
+                </AuthGuard>
+              }
+            />
+             <Route
+              path="/pestdetection"
+              element={
+                <AuthGuard>
+                  <HealthProblems />
+                </AuthGuard>
+              }
+            />
+             <Route
+              path="/offspring"
+              element={
+                <AuthGuard>
+                  <Offspring />
+                </AuthGuard>
+              }
+            />
+             <Route
+              path="/predictions"
+              element={
+                <AuthGuard>
+                 <Prediction />
+                </AuthGuard>
+              }
+            />
+             <Route
+              path="/solutions"
+              element={
+                <AuthGuard>
+                  <Solutions/>
+                </AuthGuard>
+              }
+            />
+
+
+
+
+
+
+          
 
             {/* Fallback Route */}
             <Route path="*" element={<NotFound />} />
