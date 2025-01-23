@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { format } from 'date-fns';
 import { WeatherForecast } from './types';
+import { Alert } from '../ui/alert';
+import Alerts from '../common/Alerts';
 
 interface OpenWeatherResponse {
   cod: string;
@@ -151,7 +153,9 @@ export function WeatherDashboard({ lat, lon, apiKey, onWeatherData }: Props) {
           </LineChart>
         </ResponsiveContainer>
       </div>
-
+         <div>
+           <Alerts/>
+         </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         <div className="bg-blue-50 p-4 rounded-lg">
           <h3 className="text-lg font-semibold mb-2">Average Temperature (°C)</h3>

@@ -31,14 +31,14 @@ interface LocationSelectorProps {
 const LocationSelector: React.FC<LocationSelectorProps> = ({
   onSourceSelect,
   onDestinationSelect,
-  onChitwanToKathmanduSelect,
+
   onShowRoute,
   sourceLocation,
   destinationLocation,
 }) => {
   return (
-    <div className="p-4 bg-white rounded-lg shadow z-40 mb-32">
-      <h2 className="text-xl font-semibold mb-4 text-black">Select Locations</h2>
+    <div className="p-4 bg-white rounded-lg shadow z-40 mb-24">
+      <h2 className="text-xl font-semibold mb-4">Select Locations</h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div>
           <label htmlFor="source" className="block text-sm font-medium text-gray-700 mb-1">
@@ -97,11 +97,7 @@ const LocationSelector: React.FC<LocationSelectorProps> = ({
             Show Route
           </Button>
         </div>
-        <div className="flex items-end">
-          <Button onClick={onChitwanToKathmanduSelect} className="w-full bg-blue-500 text-white hover:bg-blue-600">
-            Chitwan to Kathmandu Route
-          </Button>
-        </div>
+      
       </div>
     </div>
   )
